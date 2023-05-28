@@ -1,29 +1,22 @@
-import './App.css'
-import {Button} from "./Components/Button";
-function App() {
-  
+import "./App.css";
+import { Button } from "./Components/Button";
 
+function App() {
   return (
     <>
-      <div className='bord-game'>
-        <div className='row1'>
+      <div className="board-game ">
+        <Button>x</Button>
         <Button></Button>
         <Button></Button>
         <Button></Button>
-        </div>
-        <div className='row2' > 
         <Button></Button>
         <Button></Button>
         <Button></Button>
-        </div>
-        <div className='row3' >
         <Button></Button>
         <Button></Button>
-        <Button></Button>
-        </div>
       </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
