@@ -15,7 +15,14 @@ body {
   border: 2px solid black;
 }
 
-.button {
+button {
   height: 50px;
   width: 50px;
+}
+
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #efefef;
+  color: #666666;
 }
