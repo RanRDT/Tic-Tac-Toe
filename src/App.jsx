@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import "./App.css";
 
@@ -8,10 +8,9 @@ function App() {
 
   function handelClick(buttonClicked) {
     buttonClicked = buttonClicked.split(',');
-    board[buttonClicked[0]][buttonClicked[1]] = turn
-    setBoard(board)
-
-
+    const newBoard = [...board];
+    newBoard[buttonClicked[0]][buttonClicked[1]] = turn;
+    setBoard(newBoard);
 
     if (turn == 'x') {
       return setTurn('o')
@@ -20,6 +19,16 @@ function App() {
     }
   }
 
+  useEffect(function () {
+    // Check row win
+    let isWinningInRow = board.reduce((won, row) => {
+      return won || (row[0] !== undefined && row.every(val => val === row[0]));
+    }, false)
+    console.log(isWinningInRow);
+
+    // Check col win
+    // Check diagnal win
+  }, [board]);
 
   return (
     <>
